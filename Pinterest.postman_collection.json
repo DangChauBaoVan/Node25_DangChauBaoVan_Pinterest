@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "eb34f907-2189-4693-9d1e-e460c030381b",
+		"name": "Pinterest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15264722"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\":\"Dang Chau Bao Van\",\r\n    \"email\":\"baovan@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"age\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"baovan@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload User Avatar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIsImZ1bGxfbmFtZSI6IkRhbmcgQ2hhdSBCYW8gVmFuIiwiYWdlIjoyMCwiZW1haWwiOiJiYW92YW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkN1RpTzdYNnltS2ZWT243LkJ3UXJMdXk2bVFtdTMuTzJTRk82S2o4MjdoSzVPUlByaXh0aHEiLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2NzIxMjQ5MTMsImV4cCI6MTk4NzcwMDkxM30.l0tHf_NPmsgImF0DK5WMZU8bUI9SOKOuA4y3lYoPll4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "dataUpload",
+									"type": "file",
+									"src": "/C:/Users/dangc/Downloads/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg"
+								},
+								{
+									"key": "email",
+									"value": "baovan@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user/uploadUserAvatar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"uploadUserAvatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYmFvdmFuQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDdUaU83WDZ5bUtmVk9uNy5Cd1FyTHV5Nm1RbXUzLk8yU0ZPNktqODI3aEs1T1JQcml4dGhxIn0sImlhdCI6MTY3MjE1MDQ0MiwiZXhwIjoxOTg3NzI2NDQyfQ.3pikskMcO_0ESf7bOEMUpI4HcBSEjHrhbUllrQRaQfc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/getUserInfo/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"getUserInfo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Info",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYmFvdmFuQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDdUaU83WDZ5bUtmVk9uNy5Cd1FyTHV5Nm1RbXUzLk8yU0ZPNktqODI3aEs1T1JQcml4dGhxIn0sImlhdCI6MTY3MjQwNzQ1MCwiZXhwIjoxOTg3OTgzNDUwfQ.L6SxwNj6plrHkyOyl-81gpMFP4ZrCCkokA8WiRpjv6o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":1,\r\n    \"full_name\":\"Test Name\",\r\n    \"age\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/updateUserInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"updateUserInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "Post Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIsImZ1bGxfbmFtZSI6IkRhbmcgQ2hhdSBCYW8gVmFuIiwiYWdlIjoyMCwiZW1haWwiOiJiYW92YW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkN1RpTzdYNnltS2ZWT243LkJ3UXJMdXk2bVFtdTMuTzJTRk82S2o4MjdoSzVPUlByaXh0aHEiLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2NzIxMjQ5MTMsImV4cCI6MTk4NzcwMDkxM30.l0tHf_NPmsgImF0DK5WMZU8bUI9SOKOuA4y3lYoPll4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/dangc/Downloads/icon-256x256.png"
+								},
+								{
+									"key": "image_name",
+									"value": "hình mẫu",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Đây là một desc mẫu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/image/postImage/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"postImage",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Image Create By User ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYmFvdmFuQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDdUaU83WDZ5bUtmVk9uNy5Cd1FyTHV5Nm1RbXUzLk8yU0ZPNktqODI3aEs1T1JQcml4dGhxIn0sImlhdCI6MTY3MjQwNzQ1MCwiZXhwIjoxOTg3OTgzNDUwfQ.L6SxwNj6plrHkyOyl-81gpMFP4ZrCCkokA8WiRpjv6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/getCreateImage/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"getCreateImage",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get saves image by User ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYmFvdmFuQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDdUaU83WDZ5bUtmVk9uNy5Cd1FyTHV5Nm1RbXUzLk8yU0ZPNktqODI3aEs1T1JQcml4dGhxIn0sImlhdCI6MTY3MjQwNzQ1MCwiZXhwIjoxOTg3OTgzNDUwfQ.L6SxwNj6plrHkyOyl-81gpMFP4ZrCCkokA8WiRpjv6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/getSavedImage/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"getSavedImage",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/getAllImages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"getAllImages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image_name\":\"cute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/image/searchImage",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"searchImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Image Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image_name\":\"cute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/image/imageDetail/17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"imageDetail",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comments By Image ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image_name\":\"cute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/image/imageComments/17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"imageComments",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comments By Image ID Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image_name\":\"cute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/image/imageComments/17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"imageComments",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Saved Image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image_name\":\"cute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/image/imageComments/17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"imageComments",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYmFvdmFuQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDdUaU83WDZ5bUtmVk9uNy5Cd1FyTHV5Nm1RbXUzLk8yU0ZPNktqODI3aEs1T1JQcml4dGhxIn0sImlhdCI6MTY3MjE0OTg0NiwiZXhwIjoxOTg3NzI1ODQ2fQ.bHjCtrvt20n_UQDSUCdPtXOVT1HSqLaeBpWTQ_wJgqY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":\"2\",\r\n    \"image_id\":\"16\",\r\n    \"comments_text\":\"Hình này dễ thương\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/image/commentsImage",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"commentsImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment Image Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYmFvdmFuQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDdUaU83WDZ5bUtmVk9uNy5Cd1FyTHV5Nm1RbXUzLk8yU0ZPNktqODI3aEs1T1JQcml4dGhxIn0sImlhdCI6MTY3MjQwNzQ1MCwiZXhwIjoxOTg3OTgzNDUwfQ.L6SxwNj6plrHkyOyl-81gpMFP4ZrCCkokA8WiRpjv6o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/image/deleteImage/17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"deleteImage",
+								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/api"
+		}
+	]
+}
